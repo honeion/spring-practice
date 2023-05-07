@@ -1,4 +1,4 @@
-package service;
+package org.example.service;
 
 import org.example.logic.BubbleSort;
 import org.junit.jupiter.api.Test;
