@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war' //gradle tasks/build/
 }
 
 group 'org.example'
@@ -10,7 +11,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework:spring-context:5.3.8'
+    // maven에서 톰캣서버를 위해 gradle코드로 가져옴. 서블릿 api를 불러와야함.
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    // compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+//    implementation 'org.springframework:spring-context:5.3.8'
+//    webmvc에서 web 및 context의 기능을 모두 포함
+    implementation 'org.springframework:spring-webmvc:5.3.8'
     testImplementation 'org.springframework:spring-test:5.3.8'
 
 
